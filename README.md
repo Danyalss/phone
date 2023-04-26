@@ -1,4 +1,4 @@
-# SMS
+# SMS Bomber
 
 ## 🎨 Tested on
 * Kali linux 
