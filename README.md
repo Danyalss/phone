@@ -6,7 +6,7 @@
 
 # ⏳ Installation
 ```bash
-git clone https://github.com/Danyalss/SMS.git
+git clone https://github.com/Danyalss/phone.git
 pip install requests
-cd SMS
+cd phone
 ```
