@@ -7,6 +7,6 @@
 # ⏳ Installation
 ```bash
 git clone https://github.com/Danyalss/phone.git
-pip install requests
 cd phone
+python3 setup.py
 ```
