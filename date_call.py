@@ -11,10 +11,51 @@ Grey="\033[1;30m"
 Reset="\033[0m"
 cyan = "\033[36m"
 purple = "\033[35m"
+reset = "\033[0m"
 #########################
 
-number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "the number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
 
+name = "Danyal"
+github = "https://github.com/Danyalss"
+pirate = '''       !
+       !
+       ^
+      / \\
+     /___\\
+    |=   =|
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+    |     |
+   /|##!##|\\
+  / |##!##| \\
+ /  |##!##|  \\
+|  / ^ | ^ \\  |
+| /  ( | )  \\ |
+|/   ( | )   \\|
+    ((   ))
+   ((  :  ))
+   ((  :  ))
+    ((   ))
+     (( ))
+      ( )
+       .
+       .
+       .'''
+
+# چاپ کد پیریت با رنگ زرد
+print(f"{Green}Name: {name}")
+print(f"{Green}Github: {github}{reset}")
+print(f"{Green}{pirate}{reset}")
+
+
+number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "the number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
 
 
 heads = [
@@ -68,3 +109,8 @@ json_tci = {
 "phone_number": "989373058966"
 }
 
+url_ponisha = "https://ponisha.ir/send-mobile-verfication"
+json_ponisha = {
+	"mobile": "+98" + number,
+	"type": "2"
+}
