@@ -57,6 +57,9 @@ print(f"{Green}{pirate}{reset}")
 
 number = input("" + cyan + "[" + Red + "Enter" + cyan + "]─[" + Blue + "the number" + cyan + "]─[" + Green + "(937.........) :" + cyan + "]" + Red + ": " + Reset)
 
+in_Iran = input("" + cyan + "[" + Red + "Are" + cyan + "]─[" + Blue + "you in" + cyan + "]─[" + Green + "Iran (y/n) ? " + cyan + "]" + Red + ": " + Reset)
+
+
 
 url_divar = "https://api.divar.ir/v5/auth/authenticate"
 json_divar = {"phone":number}
@@ -186,9 +189,11 @@ json_karlancer = {
 
 url_jobvision = f"https://account.jobvision.ir/Candidate/SendVerificationForRegister?mobile=0{number}"
 
+url_komodaa = "https://api.komodaa.com/api/v2.6/loginRC/request"
+json_komodaa = {"phone_number": "0" + number}
 
-
-
+url_pindo = "https://api.pindo.ir/v1/user/login-register/"
+json_pindo = {"phone": "0" + number}
 
 
 
