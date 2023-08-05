@@ -90,27 +90,27 @@ heads = [
 ]
 
 
-url_digikala = "https://api.digikala.com/v1/user/authenticate/"
-json_digikala = {
+url_call_digikala = "https://api.digikala.com/v1/user/authenticate/"
+json_call_digikala = {
 "backUrl": "/",
 "force_send_otp": "true",
 "otp_call": "true",
 "username": "0" + number
 }
 
-url_alibaba = "https://ws.alibaba.ir/api/v3/account/call/otp"
-json_alibaba = {"phoneNumber": "0"+number}
+url_call_alibaba = "https://ws.alibaba.ir/api/v3/account/call/otp"
+json_call_alibaba = {"phoneNumber": "0"+number}
 
-url_tci = "https://my.tci.ir/api/v1/auth/send-code"
-json_tci = {
+url_call_tci = "https://my.tci.ir/api/v1/auth/send-code"
+json_call_tci = {
 "app_hash": "app_hash",
 "app_id": 1,
 "method": "VOICE_CALL",
 "phone_number": "989373058966"
 }
 
-url_ponisha = "https://ponisha.ir/send-mobile-verfication"
-json_ponisha = {
+url_call_ponisha = "https://ponisha.ir/send-mobile-verfication"
+json_call_ponisha = {
 	"mobile": "+98" + number,
 	"type": "2"
 }

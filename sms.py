@@ -16,7 +16,7 @@ cyan = "\033[36m"
 purple = "\033[35m"
 ######################
 
-from Bot.data import number, in_Iran, url_divar, json_divar, url_snapp, json_snapp, url_sheypoor, json_sheypoor, url_jet, json_jet, url_virgool, json_virgool, url_snapp_box, json_snapp_box, url_banimode, json_banimode, url_ostadkr, json_ostadkr, url_drnext, json_drnext, url_basalam, json_basalam, url_buskool, json_buskool, url_jabama, json_jabama, url_alibaba, json_alibaba, url_digitoon, json_digitoon, url_sibapp, json_sibapp, url_Drdr, json_Drdr, url_kukala, json_kukala, url_tapsi, json_tapsi, url_flightio, json_flightio, url_football_360, json_football_360, url_miare, json_miare, url_pinket, json_pinket, heads, url_torob, url_cafebazaar, json_cafebazaar , url_gap , url_sibche , json_sibche, url_ponisha, json_ponisha, url_karlancer, json_karlancer, url_jobvision, url_komodaa, json_komodaa, url_pindo, json_pindo
+from date import *
 
 attack_speed = float(input(("" + cyan + "[" + Red + "Enter The " + Blue + "refresh rate of attacks" + cyan + "]─[" + Red + "in seconds :" + cyan + "]" + Reset)))
 
