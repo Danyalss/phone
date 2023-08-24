@@ -114,3 +114,6 @@ json_call_ponisha = {
 	"mobile": "+98" + number,
 	"type": "2"
 }
+
+url_trip = "https://gateway.trip.ir/api/Totp"
+json_trip = {"PhoneNumber": "0" + number}

