@@ -45,7 +45,7 @@ attacks = [
 
 while i < numbert:
     random_head = random.choice(heads)
-    selected_attacks = random.sample(attacks, 2)
+    selected_attacks = random.sample(attacks, 4)
 
     for index, (name, url, data) in enumerate(selected_attacks):
         response = requests.post(url, json=data, headers=random_head)
