@@ -106,7 +106,7 @@ json_call_tci = {
 "app_hash": "app_hash",
 "app_id": 1,
 "method": "VOICE_CALL",
-"phone_number": "989373058966"
+"phone_number": + number
 }
 
 url_call_ponisha = "https://ponisha.ir/send-mobile-verfication"

