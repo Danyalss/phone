@@ -40,13 +40,8 @@ random_head = random.choice(heads)
 
 
 
-
-url_ = "https://www.tebinja.com/api/v1/users"
-json_ = {
-	"captchaHash": "",
-	"captchaValue": "",
-	"username": "09373058966"
-}
+url_ = ""
+json_ = 
 
 
 req = requests.post(url=url_, json=json_, headers=random_head)
