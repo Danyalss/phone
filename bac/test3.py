@@ -1,5 +1,7 @@
 import requests
 import random
+import json
+
 number = "9373058966"
 number = "9373058966"
 heads = [
@@ -39,9 +41,25 @@ random_head = random.choice(heads)
 
 
 
-url_ = ""
-json_ = 
+url_ = "https://www.tebinja.com/api/v1/users"
+json_ = {
+	"captchaHash": "",
+	"captchaValue": "",
+	"username": "09373058966"
+}
 
 
-req_ = requests.post(url=url_,json=json_,headers=random_head)
-print("",req_)
+req = requests.post(url=url_, json=json_, headers=random_head)
+
+# چاپ status code پاسخ
+print(req.status_code)
+
+# چاپ محتوای پاسخ به صورت خام
+print(req.content)
+
+# چاپ محتوای پاسخ به صورت JSON (اگر پاسخ در فرمت JSON باشد)
+try:
+    response_json = req.json()
+    print(json.dumps(response_json, indent=4, ensure_ascii=False))
+except json.JSONDecodeError:
+    print("پاسخ قابل تبدیل به JSON نیست.")
