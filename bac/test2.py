@@ -40,7 +40,7 @@ random_head = random.choice(heads)
 
 url_ = "https://user.ravaan.co/api/v2/login"
 json_ = {
-	"username": "0"+number
+	"phone": "0"+number
 }
 
 

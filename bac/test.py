@@ -1,5 +1,9 @@
 
 import requests
+import re
+
+
+
 
 
 number = "9214569870"
@@ -21,4 +25,17 @@ mypay = {
     "MethodList": "POST"
 }
 send = requests.post(url="https://www.httpdebugger.com/tools/ViewHttpHeaders.aspx",data=mypay)
+
+
+text = send.text
+
+match = re.search(r'Status: (\d+)', text)
+
+if match:
+    # اگر چنین خطی پیدا شد، عدد بعد از "Status: " چاپ می‌شود
+    print(match.group(1))
+else:
+    print("عبارت مورد نظر در متن پیدا نشد.")
+
+
 print(send.text)
