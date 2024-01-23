@@ -1,7 +1,6 @@
 import requests
 import random
 number = "9373058966"
-number = "9373058966"
 heads = [
     {
     'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; rv:76.0)Gecko/20100101 Firefox/76.0',
@@ -39,8 +38,10 @@ random_head = random.choice(heads)
 
 
 
-url_ = ""
-json_ = 
+url_ = "https://api.irangard.com/api/Users/Register/Token"
+json_ = {
+	"username": "0" + number
+}
 
 
 req_ = requests.post(url=url_,json=json_,headers=random_head)
