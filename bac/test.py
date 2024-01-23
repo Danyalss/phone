@@ -1,4 +1,3 @@
-
 import requests
 import re
 
@@ -26,16 +25,13 @@ mypay = {
 }
 send = requests.post(url="https://www.httpdebugger.com/tools/ViewHttpHeaders.aspx",data=mypay)
 
+s = "<strong>Status: 200 / OK</strong>"
 
-text = send.text
+# Extract the status code using a regular expression
+status_code_str = re.search(r'Status: (\d+)', s).group(1)
 
-match = re.search(r'Status: (\d+)', text)
+# Convert the extracted status code to an integer
+status_code = int(status_code_str)
 
-if match:
-    # اگر چنین خطی پیدا شد، عدد بعد از "Status: " چاپ می‌شود
-    print(match.group(1))
-else:
-    print("عبارت مورد نظر در متن پیدا نشد.")
-
-
-print(send.text)
+# Print the status code
+print(f"<strong>Status: {status_code} / OK</strong>")
