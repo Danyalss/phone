@@ -38,7 +38,7 @@ random_head = random.choice(heads)
 
 
 
-url_ = "https://api.irangard.com/api/Users/Register/Token"
+url_ = "https://user.ravaan.co/api/v2/login"
 json_ = {
 	"username": "0"+number
 }
