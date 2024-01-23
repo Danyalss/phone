@@ -8,7 +8,7 @@ number = "9214569870"
 mypay = {
     "UrlBox": "https://api.komodaa.com/api/v2.6/loginRC/request",
     "ContentTypeBox": "application/json",
-    "ContentDataBox": f'{{"phone_number":0"{number}","force_send_otp":true}}',
+    "ContentDataBox": {"force_send_otp": 'true',"phone_number": "09373058966"},
     "HeadersBox": "",
     "RefererBox": "",
     "AgentList": "Google+Chrome",
