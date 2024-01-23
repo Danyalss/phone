@@ -40,7 +40,7 @@ random_head = random.choice(heads)
 
 url_ = "https://api.irangard.com/api/Users/Register/Token"
 json_ = {
-	"username": "0" + number
+	"username": "0"+number
 }
 
 

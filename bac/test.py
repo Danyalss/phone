@@ -4,11 +4,15 @@ import requests
 
 number = "9214569870"
 
+url_ = "https://api.irangard.com/api/Users/Register/Token"
+json_ = {
+	"username": "0"+number
+}
 
 mypay = {
-    "UrlBox": "https://api.komodaa.com/api/v2.6/loginRC/request",
+    "UrlBox": {url_},
     "ContentTypeBox": "application/json",
-    "ContentDataBox": {"force_send_otp": 'true',"phone_number": "09373058966"},
+    "ContentDataBox": json_,
     "HeadersBox": "",
     "RefererBox": "",
     "AgentList": "Google+Chrome",
