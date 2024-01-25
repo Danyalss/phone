@@ -7,9 +7,10 @@ import re
 
 number = "9214569870"
 
-url_ = "https://api.irangard.com/api/Users/Register/Token"
+url_ = "https://gw.taaghche.com/v4/site/auth/login"
 json_ = {
-	"username": "0"+number
+	"contact": "0"+number,
+	"forceOtp": 'false'
 }
 
 mypay = {

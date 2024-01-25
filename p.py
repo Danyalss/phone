@@ -1,24 +1,27 @@
+
+
 import requests
 
-def test_proxy(proxy_ip, proxy_port):
-    proxies = {
-        'http': f'http://{proxy_ip}:{proxy_port}',
-        'https': f'https://{proxy_ip}:{proxy_port}',
-    }
-    try:
-        response = requests.get('http://digikala.com', proxies=proxies)
-        print(response)
-        if response.status_code == 200:
-            return True
-        else:
-            return False
-    except:
-        return False
 
-# تست یک پروکسی
-proxy_ip = '104.28.214.161'
-proxy_port = 8080
-if test_proxy(proxy_ip, proxy_port):
-    print(f' {proxy_ip}:{proxy_port}            True')
-else:
-    print(f' {proxy_ip}:{proxy_port}            false')
+
+
+def send(url_for_send, json_for_send, random_head):
+    try:
+        send_att = requests.post(url=url_for_send, json=json_for_send,timeout=2.5)
+    except Exception as e:
+        if str(e) == "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))" or "Read timed out" in str(e):
+            pass
+        else:
+            #bot.send_message(admin_id, f"خطایی رخ داد: {e}")
+            with open('backup/error.txt', 'a') as f:
+                f.write(f"{e}\n")
+
+
+number = '9373058966'
+
+url_divar = "https://api.divar.ir/v5/auth/authenticate"
+json_divar = {"phone":number}
+
+random_head = "jngdagn"
+
+send(url_divar,json_divar,random_head)  

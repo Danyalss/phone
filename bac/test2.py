@@ -38,11 +38,18 @@ random_head = random.choice(heads)
 
 
 
-url_ = "https://user.ravaan.co/api/v2/login"
+url_ = "https://application2.billingsystem.ayantech.ir/WebServices/Core.svc/requestActivationCode"
 json_ = {
-	"phone": "0"+number
+	"Parameters": {
+		"ApplicationType": "Web",
+		"ApplicationUniqueToken": 'null',
+		"ApplicationVersion": "1.0.0",
+		"MobileNumber": "09373058966",
+		"UniqueToken": 'null'
+	}
 }
 
 
 req_ = requests.post(url=url_,json=json_,headers=random_head)
 print("",req_)
+
