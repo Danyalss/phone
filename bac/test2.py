@@ -38,15 +38,9 @@ random_head = random.choice(heads)
 
 
 
-url_ = "https://application2.billingsystem.ayantech.ir/WebServices/Core.svc/requestActivationCode"
+url_ = "https://api.komodaa.com/api/v2.6/loginRC/request"
 json_ = {
-	"Parameters": {
-		"ApplicationType": "Web",
-		"ApplicationUniqueToken": 'null',
-		"ApplicationVersion": "1.0.0",
-		"MobileNumber": "09373058966",
-		"UniqueToken": 'null'
-	}
+	"phone_number": "0"+number
 }
 
 
